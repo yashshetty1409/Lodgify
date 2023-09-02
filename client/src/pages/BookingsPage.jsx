@@ -52,7 +52,7 @@ const BookingsPage = () => {
                 />
               </div>
               <div className="py-3 pr-3 grow">
-                <h2 className="md:text-2xl">{booking.place.title}</h2>
+                <h2 className="md:text-2xl">{booking?.place?.title}</h2>
                 <div className="md:text-xl">
                   <div className="flex gap-2 border-t "></div>
                   <div className="md:text-xl">

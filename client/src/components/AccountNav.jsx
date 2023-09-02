@@ -1,26 +1,26 @@
-import { Link, useLocation } from 'react-router-dom';
+import { Link, useLocation } from "react-router-dom";
 
 const AccountNav = () => {
   const { pathname } = useLocation();
-  let subpage = pathname.split('/')?.[2];
+  let subpage = pathname.split("/")?.[2];
 
   if (subpage === undefined) {
-    subpage = 'profile';
+    subpage = "profile";
   }
 
   const linkClases = (type = null) => {
     let classes =
-      'flex justify-center mx-10 md:mx-0 gap-1 py-2 px-6 rounded-full';
+      "flex justify-center mx-10 md:mx-0 gap-1 py-2 px-6 rounded-full hover:bg-primary hover:text-white";
     if (type === subpage) {
-      classes += ' bg-primary text-white';
+      classes += " bg-primary text-white";
     } else {
-      classes += ' bg-gray-200';
+      classes += " bg-gray-200";
     }
     return classes;
   };
   return (
     <nav className="w-full flex flex-col p-8 md:flex-row md:p-0 justify-center mt-24 gap-2 mb-8">
-      <Link className={linkClases('profile')} to={'/account'}>
+      <Link className={linkClases("profile")} to={"/account"}>
         <svg
           xmlns="http://www.w3.org/2000/svg"
           fill="none"
@@ -37,7 +37,7 @@ const AccountNav = () => {
         </svg>
         My Profile
       </Link>
-      <Link className={linkClases('bookings')} to={`/account/bookings`}>
+      <Link className={linkClases("bookings")} to={`/account/bookings`}>
         <svg
           xmlns="http://www.w3.org/2000/svg"
           fill="none"
@@ -54,7 +54,7 @@ const AccountNav = () => {
         </svg>
         My bookings
       </Link>
-      <Link className={linkClases('places')} to={'/account/places'}>
+      <Link className={linkClases("places")} to={"/account/places"}>
         <svg
           xmlns="http://www.w3.org/2000/svg"
           fill="none"
